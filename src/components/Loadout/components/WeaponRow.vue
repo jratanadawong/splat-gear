@@ -14,7 +14,7 @@
 
     <div class="weapon-container">
       <div class="squid-circle">
-        <img class="weapon-image" :src="weapon.image">
+        <img class="weapon-image" :src="require(`../../../assets/${weapon.image}`)">
       </div>
     </div>
   </CardRow>
@@ -29,7 +29,7 @@ export default {
   },
   props: {
     weapon: Object,
-  }
+  },
 }
 </script>
 <style lang="scss">

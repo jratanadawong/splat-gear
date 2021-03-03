@@ -1,4 +1,4 @@
-[
+export const weapons = [
   {
     "Addition": 0,
     "Id": 0,

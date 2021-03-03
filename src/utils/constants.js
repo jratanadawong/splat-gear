@@ -1,13 +1,13 @@
-const FILE_DICT = {
+export const FILE_DICT = {
   shoes: "GearInfo_Shoes.json",
   clothes: "GearInfo_Clothes.json",
   head: "GearInfo_Head.json",
   sub: "WeaponInfo_Sub.json",
   special: "WeaponInfo_Special.json",
-  main: "WeaponInfo_Main.json",
+  main: "WeaponInfo_Main.js",
 };
 
-const DIRECTORY_DICT = {
+export const DIRECTORY_DICT = {
   shoes: "gear",
   head: "gear",
   clothes: "gear",
@@ -15,16 +15,18 @@ const DIRECTORY_DICT = {
   sub: "subspe",
   special: "subspe",
   weapon: "weapons",
+  main: "weapons",
   brand: "brands",
 };
 
-const ASSET_PREFIX = {
+export const ASSET_PREFIX = {
   weapon: "Wst_",
+  main: "Wst_",
   sub: "Wsb_",
   special: "Wsp_",
 };
 
-const SKILL_DICT = {
+export const SKILL_DICT = {
   bdx: "BombDamage_Reduction",
   bpu: "BombDistance_Up",
   comeback: "ComeBack",

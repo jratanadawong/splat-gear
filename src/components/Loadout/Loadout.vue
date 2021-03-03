@@ -10,6 +10,7 @@
 <script>
 import CardBack from "./components/CardBack";
 import CardFront from "./components/CardFront";
+import { getWeapon } from "/src/utils";
 
 export default {
   name: 'Loadout',
@@ -21,18 +22,7 @@ export default {
     return {
       frontImage: "https://imgur.com/WXNHEQ8.jpeg",
       loadout: {
-        weapon: {
-          name: "Carbon Roller",
-          image: "https://sendou.ink/_next/image?url=%2Fweapons%2FCarbon%20Roller%20Deco.png&w=128&q=75",
-          sub: {
-            name: "Burst Bomb",
-            image: "https://cdn.wikimg.net/en/splatoonwiki/images/2/29/S2_Weapon_Sub_Burst_Bomb.png",
-          },
-          special: {
-            name: "Auto Bomb Rush",
-            image: "https://cdn.wikimg.net/en/splatoonwiki/images/2/21/S2_Weapon_Special_Autobomb_Launcher.png",
-          },
-        },
+        weapon: getWeapon(1001),
         gear: {
           head: {
             name: "",
