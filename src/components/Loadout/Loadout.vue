@@ -40,7 +40,6 @@ export default {
             skills: ["mpu", "mpu", "mpu"],
           }
         }
-
       }
     }
   }

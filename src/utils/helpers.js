@@ -9,8 +9,11 @@ import {
 } from './constants';
 
 export const getImagePath = (type, name) => {
+  console.log('type: ', type);
   name = SKILL_DICT[name] || name;
+  console.log('name: ', name);
   const path = `${DIRECTORY_DICT[type]}/${ASSET_PREFIX[type]||''}${name}.png`;
+  console.log('path: ', path);
   return path;
 };
 
@@ -36,14 +39,18 @@ export const translateItem = (item) => {
 
 export const getItem = (type, id) => {
   let data = getData(type, id);
-  console.log('data', data);
-  console.log('imagePath: ', getImagePath(type, data.Name));
   const itemCode = ASSET_PREFIX[type] + data.Name;
   return {
     image: getImagePath(type, data.Name),
     name: translateItem(itemCode) || translateItem(data.Name) || "",
-    special: translateItem(data.Special) || null,
-    sub: translateItem(data.Sub) || null,
+    special: {
+      name: translateItem(data.Special) || null,
+      image: getImagePath("special", data.Special),
+    },
+    sub: {
+      name: translateItem(data.Sub) || null,
+      image: getImagePath("sub", data.Sub),
+    },
   }
 };
 

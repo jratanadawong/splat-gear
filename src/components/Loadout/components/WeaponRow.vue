@@ -5,10 +5,10 @@
     </div>
     <div class="sub-special-container">
       <div class="ss-circle">
-        <img :src="weapon.sub.image">
+        <img :src="require(`../../../assets/${weapon.sub.image}`)">
       </div>
       <div class="ss-circle">
-        <img :src="weapon.special.image">
+        <img :src="require(`../../../assets/${weapon.special.image}`)">
       </div>
     </div>
 
@@ -21,6 +21,7 @@
 </template>
 <script>
 import CardRow from "./CardRow";
+import { getImagePath } from "/src/utils";
 
 export default {
   name: "WeaponRow",
@@ -29,6 +30,9 @@ export default {
   },
   props: {
     weapon: Object,
+  },
+  methods: {
+    getImagePath,
   },
 }
 </script>
