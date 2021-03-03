@@ -4,7 +4,7 @@ export const FILE_DICT = {
   head: "GearInfo_Head.json",
   sub: "WeaponInfo_Sub.json",
   special: "WeaponInfo_Special.json",
-  main: "WeaponInfo_Main.js",
+  main: "WeaponInfo_Main.json",
 };
 
 export const DIRECTORY_DICT = {
@@ -24,6 +24,9 @@ export const ASSET_PREFIX = {
   main: "Wst_",
   sub: "Wsb_",
   special: "Wsp_",
+  head: "Hed_",
+  shoes: "Shs_",
+  clothes: "Clt_",
 };
 
 export const SKILL_DICT = {

@@ -1,5 +1,5 @@
 import enDict from '../data/lang_dict_USen.json';
-import {weapons} from '../data/WeaponInfo_Main';
+// import Clothes from '../data/GearInfo_Clothes.json';
 
 import {
   FILE_DICT,
@@ -9,29 +9,41 @@ import {
 } from './constants';
 
 export const getImagePath = (type, name) => {
-  return `${DIRECTORY_DICT[type]}/${ASSET_PREFIX[type]||''}${name}.png`
+  name = SKILL_DICT[name] || name;
+  const path = `${DIRECTORY_DICT[type]}/${ASSET_PREFIX[type]||''}${name}.png`;
+  return path;
 };
 
 export const getFilePath = (type) => {
   return `@/data/${FILE_DICT[type]}`;
 };
 
+export const getJson = (type) => {
+  const json = require('../data/' + FILE_DICT[type]);
+  return json;
+};
+
 export const getData = (type, id) => {
-  return weapons.find(x => x.Id == id);
+  const dict = getJson(type);
+  return dict.find(x => x.Id == id);
 };
 
 export const translateItem = (item) => {
+  console.log('item', item);
+  console.log("dict: ", enDict[item]);
   return enDict[item];
 };
 
-export const getWeapon = (id) => {
-  let weaponData = getData("main", id);
-  console.log("enDict[weaponData.Name]: ", enDict[weaponData.Name]);
+export const getItem = (type, id) => {
+  let data = getData(type, id);
+  console.log('data', data);
+  console.log('imagePath: ', getImagePath(type, data.Name));
+  const itemCode = ASSET_PREFIX[type] + data.Name;
   return {
-    image: getImagePath("main", weaponData.Name),
-    name: translateItem(weaponData.Name),
-    special: translateItem(weaponData.Special),
-    sub: translateItem(weaponData.Sub),
+    image: getImagePath(type, data.Name),
+    name: translateItem(itemCode) || translateItem(data.Name) || "",
+    special: translateItem(data.Special) || null,
+    sub: translateItem(data.Sub) || null,
   }
 };
 

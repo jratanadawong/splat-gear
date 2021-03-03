@@ -2,6 +2,6 @@ export {
   getImagePath,
   getData,
   translateItem,
-  getWeapon,
+  getItem,
   getSkillIcon,
 } from './helpers';

@@ -10,7 +10,7 @@
 <script>
 import CardBack from "./components/CardBack";
 import CardFront from "./components/CardFront";
-import { getWeapon } from "/src/utils";
+import { getItem } from "/src/utils";
 
 export default {
   name: 'Loadout',
@@ -22,25 +22,22 @@ export default {
     return {
       frontImage: "https://imgur.com/WXNHEQ8.jpeg",
       loadout: {
-        weapon: getWeapon(1001),
+        weapon: getItem("main", 1001),
         gear: {
           head: {
-            name: "",
-            image: "https://sendou.ink/_next/image?url=%2Fimages%2Fgear%2FHed_EYE014.png&w=256&q=75",
-            main: "mpu",
-            subs: ["mpu", "mpu", "mpu",],
+            ...getItem("head", 3014),
+            main: "ssu",
+            skills: ["inkRes", "qsj", "bdx"],
           },
           clothing: {
-            name: "",
-            image: "https://sendou.ink/_next/image?url=%2Fimages%2Fgear%2FClt_JKT020.png&w=256&q=75",
-            main: "",
-            subs: [],
+            ...getItem("clothes", 5020),
+            main: "ns",
+            skills: ["ssu", "ssu", "inkRes"],
           },
           shoes: {
-            name: "",
-            image: "https://sendou.ink/_next/image?url=%2Fimages%2Fgear%2FShs_SHI018.png&w=256&q=75",
-            main: "",
-            subs: [],
+            ...getItem("shoes", 2018),
+            main: "mpu",
+            skills: ["mpu", "mpu", "mpu"],
           }
         }
 

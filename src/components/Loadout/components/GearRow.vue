@@ -2,20 +2,14 @@
   <CardRow class="gear">
     <div class="gear-container">
       <div class="gear-image">
-        <img :src="gear.image">
+        <img :src="require(`../../../assets/${gear.image}`)">
       </div>
       <div class="gear-abilities">
         <SubCircle main>
-          <img src="https://sendou.ink/_next/image?url=%2FabilityIcons%2FMPU.png&w=64&q=75">
+          <img :src="require(`../../../assets/${getImagePath('skill', gear.main)}`)">
         </SubCircle>
-        <SubCircle>
-          <img src="https://sendou.ink/_next/image?url=%2FabilityIcons%2FMPU.png&w=64&q=75">
-        </SubCircle>
-        <SubCircle>
-          <img src="https://sendou.ink/_next/image?url=%2FabilityIcons%2FMPU.png&w=64&q=75">
-        </SubCircle>
-        <SubCircle>
-          <img src="https://sendou.ink/_next/image?url=%2FabilityIcons%2FMPU.png&w=64&q=75">
+        <SubCircle v-for="(skill, i) in gear.skills" :key="i">
+          <img :src="require(`../../../assets/${getImagePath('skill', skill)}`)">
         </SubCircle>
       </div>
     </div>
@@ -24,6 +18,7 @@
 <script>
 import CardRow from "./CardRow";
 import SubCircle from "../../common/SubCircle";
+import { getImagePath } from "/src/utils";
 
 export default {
   name: "GearRow",
@@ -33,6 +28,9 @@ export default {
   },
   props: {
     gear: Object,
+  },
+  methods: {
+    getImagePath,
   }
 }
 </script>
