@@ -1,0 +1,15 @@
+1. Make it so that it can automatically import subs, i.e. turn MPU into the icon
+2. Upload images for card front
+3. Validate item specific mains, i.e. Comeback, Ninja Squid, Stealth Jump, etc.
+4. Click to put sub in next empty slot.
+  - Drag and drop subs
+  - Empty sub icon
+5. Allow moving the placement of the weapon name on the front of the card
+  - Drag to position
+6. Drop down list for weapons
+  - And gear
+  - And subs?
+7. Create data set for weapon/sub/special loadouts
+8. Upload gear
+  - provide brand details?
+9. Allow custom gradients
