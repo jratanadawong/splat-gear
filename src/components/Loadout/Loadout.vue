@@ -1,26 +1,30 @@
 <template>
   <div class="card">
 
-  <CardFront :weapon="loadout.weapon" :image="frontImage"/>
+  <CardFront :weapon="loadout.weapon" :image="frontImage" />
   <CardBack :loadout="loadout"/>
 
   </div>
 </template>
 
 <script>
+import { getItem } from "/src/utils";
+
 import CardBack from "./components/CardBack";
 import CardFront from "./components/CardFront";
-import { getItem } from "/src/utils";
 
 export default {
   name: 'Loadout',
   components: {
     CardBack,
-    CardFront,
+    CardFront
+  },
+  methods: {
   },
   data() {
     return {
       frontImage: "https://imgur.com/WXNHEQ8.jpeg",
+      weaponId: 1001,
       loadout: {
         weapon: getItem("main", 1001),
         gear: {

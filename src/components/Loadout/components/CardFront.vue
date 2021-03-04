@@ -3,20 +3,27 @@
     <div class="card-content">
       <img :src="image">
       <div class="weapon-name">
-        <div class="weapon-label">
+        <label class="weapon-label" for="weapon-select">
           {{ weapon.name }}
-        </div>
+        </label>
+        <Select id="weapon-select" :items="getData('main')"
+          displayField="Name" :value="weapon.name" selectionField="Id">
+        </Select>
       </div>
     </div>
   </CardBox>
 </template>
 <script>
+import { getData } from "/src/utils";
+
 import CardBox from "./CardBox.vue";
+import Select from "../../common/Select";
 
 export default {
   name: "CardFront",
   components: {
     CardBox,
+    Select,
   },
   props: {
     image: {
@@ -25,10 +32,18 @@ export default {
     },
     weapon: Object,
   },
+  methods: {
+    getData,
+  }
 }
 </script>
 <style lang="scss">
   .card-front {
+    // select {
+    //   appearance: none;
+    //   height: 0;
+    //   width: 0;
+    // }
     .card-content {
       width: var(--card-content-size);
       height: var(--card-content-size);
@@ -41,16 +56,23 @@ export default {
       z-index: 1;
     }
     .weapon-label {
+      cursor: pointer;
+      pointer-events: none;
       font-size: 24px;
       position: relative;
       color: white;
       z-index: 4;
-      width: 100%;
       padding: 0 var(--label-padding);
     }
     .weapon-name {
+      cursor: pointer;
+      font-family: "Splatoon2", arial;
+      display: flex;
       position: relative;
       color: white;
+      width: 100%;
+      line-height: 1.5em;
+      padding: .5em 0;
       z-index: 4;
       text-align: center;
       top: calc(var(--card-size) / -4);

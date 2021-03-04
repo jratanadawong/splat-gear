@@ -9,11 +9,8 @@ import {
 } from './constants';
 
 export const getImagePath = (type, name) => {
-  console.log('type: ', type);
   name = SKILL_DICT[name] || name;
-  console.log('name: ', name);
   const path = `${DIRECTORY_DICT[type]}/${ASSET_PREFIX[type]||''}${name}.png`;
-  console.log('path: ', path);
   return path;
 };
 
@@ -26,30 +23,33 @@ export const getJson = (type) => {
   return json;
 };
 
-export const getData = (type, id) => {
-  const dict = getJson(type);
-  return dict.find(x => x.Id == id);
+export const getData = (type) => {
+  return getJson(type);
+};
+
+export const loadItem = (data, id) => {
+  return data.find(x => x.Id == id);
 };
 
 export const translateItem = (item) => {
-  console.log('item', item);
-  console.log("dict: ", enDict[item]);
   return enDict[item];
 };
 
 export const getItem = (type, id) => {
-  let data = getData(type, id);
-  const itemCode = ASSET_PREFIX[type] + data.Name;
+  const data = getData(type);
+  const item = loadItem (data, id);
+  console.log('item: ', item);
+  const itemCode = ASSET_PREFIX[type] + item.Name;
   return {
-    image: getImagePath(type, data.Name),
-    name: translateItem(itemCode) || translateItem(data.Name) || "",
+    image: getImagePath(type, item.Name),
+    name: translateItem(itemCode) || translateItem(item.Name) || "",
     special: {
-      name: translateItem(data.Special) || null,
-      image: getImagePath("special", data.Special),
+      name: translateItem(item.Special) || null,
+      image: getImagePath("special", item.Special),
     },
     sub: {
-      name: translateItem(data.Sub) || null,
-      image: getImagePath("sub", data.Sub),
+      name: translateItem(item.Sub) || null,
+      image: getImagePath("sub", item.Sub),
     },
   }
 };
