@@ -6,10 +6,16 @@
   - Empty sub icon
 5. Allow moving the placement of the weapon name on the front of the card
   - Drag to position
-6. Drop down list for weapons
+6. Drop down datalist for weapons
   - And gear
   - And subs?
+  - Modal instead of datalist? Pseudo-modal?
 7. Create data set for weapon/sub/special loadouts
 8. Upload gear
   - provide brand details?
+  - Favoured ability? Unfavoured ability?
 9. Allow custom gradients
+10. Sub selection - how?
+  - click on sub to show modal?
+  - drag and drop from another menu?
+  - click to fill next open slot from another menu?
