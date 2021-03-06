@@ -27,12 +27,12 @@ export default {
           head: {
             ...getItem("head", 3014),
             main: "ssu",
-            skills: ["inkRes", "qsj", "bdx"],
+            skills: ["res", "qsj", "bdx"],
           },
-          clothing: {
+          clothes: {
             ...getItem("clothes", 5020),
             main: "ns",
-            skills: ["ssu", "ssu", "inkRes"],
+            skills: ["ssu", "ssu", "res"],
           },
           shoes: {
             ...getItem("shoes", 2018),

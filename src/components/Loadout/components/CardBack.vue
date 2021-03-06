@@ -3,7 +3,7 @@
     <div class="card-content">
       <WeaponRow :weapon="loadout.weapon"/>
       <GearRow :gear="loadout.gear.head"/>
-      <GearRow :gear="loadout.gear.clothing"/>
+      <GearRow :gear="loadout.gear.clothes"/>
       <GearRow :gear="loadout.gear.shoes"/>
     </div>
   </CardBox>

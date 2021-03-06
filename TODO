@@ -1,21 +1,20 @@
-1. Make it so that it can automatically import subs, i.e. turn MPU into the icon
-2. Upload images for card front
-3. Validate item specific mains, i.e. Comeback, Ninja Squid, Stealth Jump, etc.
-4. Click to put sub in next empty slot.
-  - Drag and drop subs
-  - Empty sub icon
-5. Allow moving the placement of the weapon name on the front of the card
+1. Upload images for card front
+2. Validate item specific mains, i.e. Comeback, Ninja Squid, Stealth Jump, etc.
+3. Click to put sub-skill in next empty slot.
+  - Drag and drop skills
+  - Empty skill icon
+4. Allow moving the placement of the weapon name on the front of the card
   - Drag to position
 6. Drop down datalist for weapons
   - And gear
-  - And subs?
+  - And skills?
   - Modal instead of datalist? Pseudo-modal?
 7. Create data set for weapon/sub/special loadouts
 8. Upload gear
   - provide brand details?
   - Favoured ability? Unfavoured ability?
 9. Allow custom gradients
-10. Sub selection - how?
-  - click on sub to show modal?
+10. Skill selection - how?
+  - click on skill to show modal?
   - drag and drop from another menu?
   - click to fill next open slot from another menu?

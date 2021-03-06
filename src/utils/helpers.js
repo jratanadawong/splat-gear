@@ -1,5 +1,4 @@
 import enDict from '../data/lang_dict_USen.json';
-// import Clothes from '../data/GearInfo_Clothes.json';
 
 import {
   FILE_DICT,
@@ -9,11 +8,8 @@ import {
 } from './constants';
 
 export const getImagePath = (type, name) => {
-  console.log('type: ', type);
   name = SKILL_DICT[name] || name;
-  console.log('name: ', name);
   const path = `${DIRECTORY_DICT[type]}/${ASSET_PREFIX[type]||''}${name}.png`;
-  console.log('path: ', path);
   return path;
 };
 
@@ -32,8 +28,6 @@ export const getData = (type, id) => {
 };
 
 export const translateItem = (item) => {
-  console.log('item', item);
-  console.log("dict: ", enDict[item]);
   return enDict[item];
 };
 
