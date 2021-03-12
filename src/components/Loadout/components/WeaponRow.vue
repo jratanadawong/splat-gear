@@ -71,7 +71,6 @@ export default {
     .weapon-details {
       width: 92%;
       .weapon-name {
-        font-size: 24px;
         display: flex;
         background-color: white;
         height: var(--weapon-row-size);

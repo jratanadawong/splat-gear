@@ -15,7 +15,7 @@ export default {
     justify-content: center;
     align-items: center;
     flex-grow: 1;
-    margin-top: 5px;
+    margin-top: calc(var(--label-padding) / 2);
     width: var(--card-content-size);
     &:first-of-type {
       margin-top: 0;

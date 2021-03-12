@@ -43,7 +43,7 @@ export const SKILL_DICT = {
   ten: "MinorityUp",
   os: "ObjectEffect_Up",
   res: "OpInkEffect_Reduction",
-  ss: "RespawnSpecialGuage_Save",
+  ss: "RespawnSpecialGauge_Save",
   qr: "RespawnTime_Save",
   dr: "SomersaultLanding",
   scu: "SpecialIncrease_Up",

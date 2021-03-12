@@ -37,11 +37,11 @@ export default {
     }
     img {
       height: 100%;
-      border-radius: 10px;
+      border-radius: var(--border-radius);
       z-index: 1;
     }
     .weapon-label {
-      font-size: 24px;
+      font-size: 1.4em;
       position: relative;
       color: white;
       z-index: 4;
