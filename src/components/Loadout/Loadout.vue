@@ -1,7 +1,7 @@
 <template>
   <div class="card">
 
-  <CardFront :weapon="loadout.weapon" :image="loadout.image"/>
+  <CardFront :weapon="loadout.weapon" :image="loadout.image" :gradient="loadout.gradient"/>
   <CardBack :loadout="loadout"/>
 
   </div>

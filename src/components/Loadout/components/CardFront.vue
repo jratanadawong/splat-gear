@@ -1,5 +1,5 @@
 <template>
-  <CardBox class="card-front">
+  <CardBox class="card-front" :gradient="gradient">
     <div class="card-content">
       <img :src="image">
       <div class="weapon-name">
@@ -24,6 +24,7 @@ export default {
       default: "",
     },
     weapon: Object,
+    gradient: String,
   },
 }
 </script>

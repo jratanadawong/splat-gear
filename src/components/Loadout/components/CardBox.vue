@@ -1,11 +1,12 @@
 <template>
-  <div class="card-box">
+  <div class="card-box" :style="{ background: gradient }">
     <slot />
   </div>
 </template>
 <script>
 export default {
   name: "CardBox",
+  props: ["gradient"],
 }
 </script>
 <style lang="scss">
@@ -14,6 +15,5 @@ export default {
     width: var(--card-size);
     border-radius: var(--border-radius);
     margin-right: 1px;
-    background: linear-gradient(-45deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
   }
 </style>

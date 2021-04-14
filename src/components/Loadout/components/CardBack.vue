@@ -1,5 +1,5 @@
 <template>
-  <CardBox class="card-back">
+  <CardBox class="card-back" :gradient="loadout.gradient">
     <div class="card-content">
       <WeaponRow :weapon="loadout.weapon"/>
       <GearRow :gear="loadout.gear.head"/>
