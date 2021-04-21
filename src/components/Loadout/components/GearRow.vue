@@ -64,6 +64,8 @@ export default {
         width: var(--gear-image-size);
         margin-right: var(--label-padding);
         img {
+          height: var(--gear-image-size);
+          width: var(--gear-image-size);
           display: flex;
           z-index: 2;
         }

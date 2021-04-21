@@ -1,19 +1,27 @@
 <template>
-  <div class="card-box" :style="{ background: gradient }">
+  <div class="card-box" :style="{ background: background }">
     <slot />
   </div>
 </template>
 <script>
 export default {
   name: "CardBox",
-  props: ["gradient"],
+  props: ["background"],
 }
 </script>
 <style lang="scss">
+  // @media print {
+  //   .card-box {
+  //     // break-inside: avoid;
+  //     // page-break-before: always;
+  //     page-break-inside: avoid;
+  //   }
+  // }
   .card-box {
     height: var(--card-size);
     width: var(--card-size);
     border-radius: var(--border-radius);
-    margin-right: 1px;
+    -webkit-print-color-adjust: exact;
+
   }
 </style>

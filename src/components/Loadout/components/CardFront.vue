@@ -1,10 +1,10 @@
 <template>
-  <CardBox class="card-front" :gradient="gradient">
+  <CardBox class="card-front" :background="background">
     <div class="card-content">
       <img :src="image">
       <div class="weapon-name">
         <div class="weapon-label">
-          {{ weapon.name }}
+          {{ name }}
         </div>
       </div>
     </div>
@@ -24,7 +24,8 @@ export default {
       default: "",
     },
     weapon: Object,
-    gradient: String,
+    background: String,
+    name: String,
   },
 }
 </script>
@@ -42,12 +43,12 @@ export default {
       z-index: 1;
     }
     .weapon-label {
-      font-size: 1.4em;
+      // font-size: 1rem;
       position: relative;
       color: white;
       z-index: 4;
       width: 100%;
-      padding: 0 var(--label-padding);
+      // padding: 0 var(--label-padding);
     }
     .weapon-name {
       position: relative;

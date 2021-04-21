@@ -54,5 +54,6 @@ export const SKILL_DICT = {
   iss: "SubInk_Save",
   sj: "SuperJumpSign_Hide",
   ti: "ThermalInk",
+  rp: "Exorcist",
   unknown: "Unknown",
 };

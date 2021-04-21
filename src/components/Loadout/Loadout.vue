@@ -1,9 +1,9 @@
 <template>
   <div class="card">
-
-  <CardFront :weapon="loadout.weapon" :image="loadout.image" :gradient="loadout.gradient"/>
-  <CardBack :loadout="loadout"/>
-
+    <div class="card-container">
+      <CardFront :weapon="loadout.weapon" :image="loadout.image" :background="loadout.background" :name="loadout.name"/>
+      <CardBack :loadout="loadout"/>
+    </div>
   </div>
 </template>
 
@@ -26,7 +26,7 @@ export default {
 </script>
 <style lang="scss">
 :root {
-  --card-size: 300px;
+  --card-size: 2in;
   --border-radius: .5rem;
   --card-padding: calc(var(--card-size) / 16);
   --label-padding: calc(var(--card-size) / 40);
@@ -43,12 +43,34 @@ export default {
 
 .card {
   display: flex;
+}
+
+.card-container {
+  display: flex;
   flex-direction: row;
   font-family: "Splatoon2", arial;
-  margin-bottom: 1px;
+  margin-bottom: .2in;
+  margin-right: .2in;
+  break-inside: avoid;
   .weapon-name, .weapon-label {
-    line-height: 1.4em;
+    line-height: 1rem;
   }
 }
+
+  @media print {
+    .card-container {
+      // break-inside: avoid;
+      // page-break-before: always;
+      // page-break-inside: avoid;
+      // position: relative;
+    }
+    .card {
+      // display: block !important;
+      // position: relative;
+      display: block;
+      float: left;
+      break-inside: avoid;
+    }
+  }
 
 </style>
