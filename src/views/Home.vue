@@ -5,9 +5,20 @@
 </template>
 
 <script>
-import { getItem } from "/src/utils";
+import { createLoadout } from "/src/utils";
 
-import Loadout from '@/components/Loadout/Loadout.vue'
+import Loadout from '@/components/Loadout/Loadout.vue';
+
+const bgImages = [
+  "https://i.imgur.com/GXrcAPB.png",
+  "https://64.media.tumblr.com/b2cd0f6455954c3081a49c21234bc628/tumblr_oncujzI2Qb1uii9t6o1_1280.jpg",
+  "https://i.imgur.com/5MHALvC.png",
+  "https://img.wallpapersafari.com/desktop/1440/900/17/68/GFqc1g.png",
+];
+
+const generateBg = () => {
+  return `url(${bgImages[Math.floor(Math.random() * bgImages.length)]})`;
+};
 
 export default {
   name: 'Home',
@@ -17,443 +28,671 @@ export default {
   data() {
     return {
       loadouts: [
-        {
-          image: "https://imgur.com/WXNHEQ8.jpeg",
-          name: "Carbon Roller Deco",
-          weapon: getItem("main", 1001),
+        createLoadout({
+          image: "https://imgur.com/JWzQmXd.png",
+          weapon: "Kensa .52 Gal",
           gear: {
             head: {
-              ...getItem("head", 3014),
-              main: "ssu",
-              skills: ["res", "qsj", "bdx"],
+              name: "Full Moon Glasses",
+              skills: "cb qsj res bdx",
             },
             clothes: {
-              ...getItem("clothes", 5020),
-              main: "ns",
-              skills: ["ssu", "ssu", "res"],
+              name: "deep-octo satin jacket",
+              skills: "ssu ssu ssu mpu"
             },
             shoes: {
-              ...getItem("shoes", 2027),
-              main: "mpu",
-              skills: ["mpu", "mpu", "mpu"],
+              name: "new-day arrows",
+              skills: "sj mpu mpu res"
             }
           },
-          background: 'linear-gradient(to bottom left, #f217fe, #263506)',
-        },
-        {
-          image: "https://imgur.com/yDMlQeU.jpg",
-          name: "Custom Dualie Squelchers",
-          weapon: getItem("main", 5031),
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/3gDLTOf.png",
+          weapon: "Kensa .52 Gal",
           gear: {
             head: {
-              ...getItem("head", 2010),
-              main: "mpu",
-              skills: ["mpu", "mpu", "res"],
+              name: "Knitted Hat",
+              skills: "qr qr qr qr",
             },
             clothes: {
-              ...getItem("clothes", 10007),
-              main: "mpu",
-              skills: ["mpu", "mpu", "bdx"],
+              name: "kensa coat",
+              skills: "ssu bdx res qsj"
             },
             shoes: {
-              ...getItem("shoes", 23002),
-              main: "mpu",
-              skills: ["mpu", "ism", "ism"],
+              name: "annaki arachno boots",
+              skills: "sj mpu mpu mpu"
             }
           },
-          background: 'linear-gradient(to top right, #952c1b, #98575f, #f217fe)',
-        },
-        {
-          image: "https://imgur.com/LjXMosP.jpg",
-          name: "N-ZAP '85",
-          weapon: getItem("main", 60),
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/w12EPdn.png",
+          weapon: "Neo Splash-o-matic",
           gear: {
             head: {
-              ...getItem("head", 8003),
-              main: "lde",
-              skills: ["mpu", "mpu", "ss"],
+              name: "Annaki Mask",
+              skills: "ssu mpu mpu mpu",
             },
             clothes: {
-              ...getItem("clothes", 1047),
-              main: "rsu",
-              skills: ["rsu", "rsu", "mpu"],
+              name: "black inky rider",
+              skills: "mpu mpu bpu bpu"
             },
             shoes: {
-              ...getItem("shoes", 27104),
-              main: "os",
-              skills: ["qsj", "res", "bdx"],
+              name: "annaki arachno boots",
+              skills: "mpu qsj res bdx",
             }
           },
-          background: 'linear-gradient(45deg, rgba(62,66,56,1) 10%, rgba(244,65,252,1) 55%, rgba(166,223,243,1) 90%)',
-        },
-        {
-          image: "https://imgur.com/fQqrC0C.jpg",
-          name: "Tentatek Splattershot",
-          weapon: getItem("main", 41),
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/m442lGE.png",
+          weapon: "Neo Splash-o-matic",
           gear: {
             head: {
-              ...getItem("head", 3004),
-              main: "qr",
-              skills: ["mpu", "mpu", "mpu"],
+              name: "Pilot Goggles",
+              skills: "mpu mpu mpu ssu",
             },
             clothes: {
-              ...getItem("clothes", 8007),
-              main: "qr",
-              skills: ["res", "qsj", "bdx"],
+              name: "red-check shirt",
+              skills: "mpu mpu mpu ssu",
             },
             shoes: {
-              ...getItem("shoes", 7000),
-              main: "sj",
-              skills: ["ssu", "ssu", "ssu"],
+              name: "punk blacks",
+              skills: "sj qsj res bdx",
             }
           },
-          background: 'linear-gradient(to right top, #f54bb6, #353590, #1bcb41)',
-        },
-        {
-          image: "https://imgur.com/dqoFitn.jpg",
-          name: ".96 Gal",
-          weapon: getItem("main", 80),
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/SnjVGLl.png",
+          weapon: "Kensa Splattershot",
           gear: {
             head: {
-              ...getItem("head", 3014),
-              main: "ssu",
-              skills: ["qsj", "res", "bdx"],
+              name: "White Arrowbands",
+              skills: "lde mpu mpu mpu",
             },
             clothes: {
-              ...getItem("clothes", 27004),
-              main: "scu",
-              skills: ["scu", "ss", "ss"],
+              name: "krak-on 528",
+              skills: "qr ssu ssu ss",
             },
             shoes: {
-              ...getItem("shoes", 2038),
-              main: "mpu",
-              skills: ["mpu", "mpu", "mpu"],
+              name: "punk blacks",
+              skills: "sj qsj res bdx",
             }
           },
-          background: 'linear-gradient(to top right, #32980d, #f54bb6, #fcd500)',
-        },
-        {
-          image: "https://imgur.com/PGPbQIu.jpg",
-          name: "Nozzlenose L-3 D",
-          weapon: getItem("main", 301),
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/HlwVH6S.png",
+          weapon: "Custom Dualie Squelchers",
           gear: {
             head: {
-              ...getItem("head", 1002),
-              main: "mpu",
-              skills: ["mpu", "mpu", "mpu"],
+              name: "Yamagiri Beanie",
+              skills: "mpu mpu mpu res",
             },
             clothes: {
-              ...getItem("clothes", 7009),
-              main: "ssu",
-              skills: ["ssu", "mpu", "mpu"],
+              name: "hothouse hoodie",
+              skills: "mpu mpu mpu bdx",
             },
             shoes: {
-              ...getItem("shoes", 2011),
-              main: "dr",
-              skills: ["qsj", "res", "bdx"],
+              name: "pearl punk crowns",
+              skills: "mpu mpu ism ism",
             }
           },
-          background: 'linear-gradient(to top right, #7e3fa5, #2430a5, #53f9f4)',
-        },
-        {
-          image: "https://imgur.com/1kfmJoJ.jpg",
-          name: "Splattershot Jr.",
-          weapon: getItem("main", 10),
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/NgrpTBQ.png",
+          weapon: "N-ZAP '85",
           gear: {
             head: {
-              ...getItem("head", 3008),
-              main: "lde",
-              skills: ["bpu", "bpu", "res"],
+              name: "Skull Bandana",
+              skills: "lde mpu mpu ss",
             },
             clothes: {
-              ...getItem("clothes", 25000),
-              main: "res",
-              skills: ["scu", "bdx", "scu"],
+              name: "sailor-stripe tee",
+              skills: "rsu mpu scu scu",
             },
             shoes: {
-              ...getItem("shoes", 25000),
-              main: "iss",
-              skills: ["iss", "iss", "iss"],
+              name: "neo octoling boots",
+              skills: "os qsj res bdx",
             }
           },
-          background: 'linear-gradient(to top right, #f06e23, #d92fee)',
-        },
-        {
-          image: "https://imgur.com/ADsbRRM.jpg",
-          name: "Kensa Splattershot Pro",
-          weapon: getItem("main", 72),
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/dABsfOy.png",
+          weapon: "N-ZAP '85",
           gear: {
             head: {
-              ...getItem("head", 3002),
-              main: "mpu",
-              skills: ["mpu", "mpu", "ssu"],
+              name: "short beanie",
+              skills: "cb qr qr ss",
             },
             clothes: {
-              ...getItem("clothes", 7007),
-              main: "mpu",
-              skills: ["mpu", "ssu", "qsj"],
+              name: "positive longcuff sweater",
+              skills: "ssu mpu mpu mpu",
             },
             shoes: {
-              ...getItem("shoes", 2022),
-              main: "mpu",
-              skills: ["mpu", "res", "bdx"],
+              name: "neo octoling boots",
+              skills: "os qsj res bdx",
             }
           },
-          background: 'linear-gradient(to top right, #614385, #516395)',
-        },
-        {
-          image: "https://imgur.com/xQDpQmF.jpg",
-          name: "Custom Jet Squelcher",
-          weapon: getItem("main", 91),
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/uZ4mfSn.png",
+          weapon: "L-3 Nozzlenose D",
           gear: {
             head: {
-              ...getItem("head", 3007),
-              main: "scu",
-              skills: ["scu", "scu", "scu"],
+              name: "Takoroka Mesh",
+              skills: "mpu mpu mpu mpu",
             },
             clothes: {
-              ...getItem("clothes", 25007),
-              main: "spu",
-              skills: ["spu", "bpu", "bpu"],
+              name: "forge inkling parka",
+              skills: "rsu rsu mpu mpu",
             },
             shoes: {
-              ...getItem("shoes", 27104),
-              main: "os",
-              skills: ["qsj", "res", "bdx"],
+              name: "mint dakroniks",
+              skills: "dr qsj res bdx",
             }
           },
-          background: 'linear-gradient(to bottom left, #02AAB0, #1c666b, #f32cfe)',
-        },
-        {
-          image: "https://imgur.com/AW8cdbH.jpg",
-          name: "Splat Charger",
-          weapon: getItem("main", 2015),
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/c5Gg4sc.png",
+          weapon: "H-3 Nozzlenose D",
           gear: {
             head: {
-              ...getItem("head", 3007),
-              main: "scu",
-              skills: ["scu", "scu", "scu"],
+              name: "Fishfry Biscuit Bandana",
+              skills: "mpu mpu mpu scu",
             },
             clothes: {
-              ...getItem("clothes", 5017),
-              main: "spu",
-              skills: ["spu", "bpu", "bpu"],
+              name: "pink hoodie",
+              skills: "mpu mpu mpu ss",
             },
             shoes: {
-              ...getItem("shoes", 27104),
-              main: "os",
-              skills: ["qsj", "res", "bdx"],
+              name: "navy enperrials",
+              skills: "mpu qsj res bdx",
             }
           },
-          background: 'linear-gradient(to top right, #dd5e89, #f7bb97)',
-        },
-        {
-          image: "https://imgur.com/RjaVeSb.jpg",
-          name: "Kensa Undercover Brella",
-          weapon: getItem("main", 6022),
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/s7nO4J0.png",
+          weapon: "Nautilus 79",
           gear: {
             head: {
-              ...getItem("head", 3002),
-              main: "mpu",
-              skills: ["mpu", "mpu", "ssu"],
+              name: "Annaki Mask",
+              skills: "ssu mpu mpu mpu",
             },
             clothes: {
-              ...getItem("clothes", 1032),
-              main: "iss",
-              skills: ["iss", "bdx", "res"],
+              name: "annaki polpo-pic tee",
+              skills: "rsu rsu rsu mpu",
             },
             shoes: {
-              ...getItem("shoes", 2014),
-              main: "ssu",
-              skills: ["ssu", "ssu", "qsj"],
+              name: "punk blacks",
+              skills: "sj qsj res bdx",
             }
           },
-          background: 'linear-gradient(to bottom left, #556270, #fff, #f430fd)',
-        },
-        {
-          image: "https://imgur.com/EvPZExH.jpg",
-          name: "Octoshot Replica",
-          weapon: getItem("main", 46),
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/J8SYpfJ.png",
+          weapon: "Foil Squeezer",
           gear: {
             head: {
-              ...getItem("head", 3014),
-              main: "ssu",
-              skills: ["res", "qsj", "bdx"],
+              name: "Octoglasses",
+              skills: "lde qsj res bdx",
             },
             clothes: {
-              ...getItem("clothes", 6003),
-              main: "ssu",
-              skills: ["spu", "spu", "ss"],
+              name: "dark bomber jacket",
+              skills: "spu spu spu spu",
             },
             shoes: {
-              ...getItem("shoes", 6016),
-              main: "sj",
-              skills: ["mpu", "mpu", "mpu"],
+              name: "red slip-ons",
+              skills: "os ssu ssu ss",
             }
           },
-          background: 'linear-gradient(to top right, #7a183c, #5da3b1)',
-        },
-        {
-          image: "https://imgur.com/ad4LQaB.jpg",
-          name: "Foil Squeezer",
-          weapon: getItem("main", 401),
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/1xeRJSf.png",
+          weapon: "Sploosh-o-matic 7",
           gear: {
             head: {
-              ...getItem("head", 25000),
-              main: "ssu",
-              skills: ["res", "iss", "iss"],
+              name: "18k aviators",
+              skills: "lde bpu bpu res",
             },
             clothes: {
-              ...getItem("clothes", 5036),
-              main: "spu",
-              skills: ["spu", "spu", "spu"],
+              name: "online jersey",
+              skills: "ssu ssu ssu ssu",
             },
             shoes: {
-              ...getItem("shoes", 27104),
-              main: "os",
-              skills: ["qsj", "res", "bdx"],
+              name: "neo octoling boots",
+              skills: "os qsj res bdx",
             }
           },
-          background: 'linear-gradient(to top right, #6b1d0d, #fff, #b70707, #d72efc)',
-        },
-        {
-          image: "https://imgur.com/WU7Azxx.jpg",
-          name: "Tenta Brella",
-          weapon: getItem("main", 6010),
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/1kfmJoJ.png",
+          weapon: "Splattershot Jr.",
           gear: {
             head: {
-              ...getItem("head", 25008),
-              main: "ism",
-              skills: ["ism", "ism", "spu"],
+              name: "18k aviators",
+              skills: "lde bpu bpu res",
             },
             clothes: {
-              ...getItem("clothes", 5036),
-              main: "spu",
-              skills: ["spu", "spu", "spu"],
+              name: "School Uniform",
+              skills: "iru scu bdx scu",
             },
             shoes: {
-              ...getItem("shoes", 27104),
-              main: "os",
-              skills: ["qsj", "res", "bdx"],
+              name: "school shoes",
+              skills: "iss iss iss iss",
             }
           },
-          background: 'linear-gradient(to top right, #361a32, #da78f4, #59c8e5)',
-        },
-        {
-          image: "https://imgur.com/Mlae24r.jpg",
-          name: "[Ballpoint] Splatling",
-          weapon: getItem("main", 4030),
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/fQqrC0C.png",
+          weapon: "Tentatek Splattershot",
           gear: {
             head: {
-              ...getItem("head", 1019),
-              main: "rsu",
-              skills: ["rsu", "rsu", "rsu"],
+              name: "black arrowbands",
+              skills: "qr mpu mpu mpu",
             },
             clothes: {
-              ...getItem("clothes", 9008),
-              main: "res",
-              skills: ["qsj", "bdx", "ism"],
+              name: "baby-jelly shirt",
+              skills: "qr res qsj bdx",
             },
             shoes: {
-              ...getItem("shoes", 1015),
-              main: "rsu",
-              skills: ["rsu", "rsu", "rsu"],
+              name: "blue slip-ons",
+              skills: "sj ssu ssu ssu",
             }
           },
-          background: 'linear-gradient(to top right, #e619f6, #f5251e)',
-        },
-        {
-          image: "https://imgur.com/hZrtBFj.jpg",
-          name: "E-Liter 4K",
-          weapon: getItem("main", 2030),
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/EvPZExH.png",
+          weapon: "Octo Shot Replica",
           gear: {
             head: {
-              ...getItem("head", 2009),
-              main: "ssu",
-              skills: ["mpu", "mpu", "ss"],
+              name: "SV925 Circle Shades",
+              skills: "ssu res qsj bdx",
             },
             clothes: {
-              ...getItem("clothes", 25006),
-              main: "rp",
-              skills: ["qsj", "res", "bdx"],
+              name: "white king tank",
+              skills: "ssu spu spu ss",
             },
             shoes: {
-              ...getItem("shoes", 23002),
-              main: "mpu",
-              skills: ["mpu", "ism", "ism"],
+              name: "Annaki Arachno boots",
+              skills: "sj mpu mpu mpu",
             }
           },
-          background: 'linear-gradient(to top right, #d94f3d, #e1eaab, #d497b3)',
-        },
-        {
-          image: "https://imgur.com/aGZ9VDD.jpg",
-          name: "Grim Range Blaster",
-          weapon: getItem("main", 222),
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/dBvL18t.png",
+          weapon: "Kensa Splattershot Pro",
           gear: {
             head: {
-              ...getItem("head", 5001),
-              main: "iss",
-              skills: ["ism", "bpu", "bpu"],
+              name: "Pilot Goggles",
+              skills: "mpu mpu mpu ssu",
             },
             clothes: {
-              ...getItem("clothes", 5018),
-              main: "mpu",
-              skills: ["qsj", "ism", "res"],
+              name: "red-check shirt",
+              skills: "mpu mpu mpu ssu",
             },
             shoes: {
-              ...getItem("shoes", 3008),
-              main: "sj",
-              skills: ["bpu", "ss", "ism"],
+              name: "navy enperrials",
+              skills: "mpu qsj res bdx",
             }
           },
-          background: 'linear-gradient(to top right, #e00887,  #fccd00, #9502cd, #fff, #34a8b4, #253872)',
-        },
-        {
-          image: "https://imgur.com/vHX20rF.jpg",
-          name: "Ninja Squid! - Tri-Slosher",
-          weapon: getItem("main", 3010),
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/nxJ8JvD.png",
+          weapon: ".96 Gal",
           gear: {
             head: {
-              ...getItem("head", 2008),
-              main: "qr",
-              skills: ["qr", "qr", "qr"],
+              name: "Golden Toothpick",
+              skills: "scu scu scu ss",
             },
             clothes: {
-              ...getItem("clothes", 5022),
-              main: "ns",
-              skills: ["qsj", "res", "bdx"],
+              name: "positive longcuff sweater",
+              skills: "ssu mpu mpu mpu",
             },
             shoes: {
-              ...getItem("shoes", 2040),
-              main: "sj",
-              skills: ["ssu", "ssu", "ssu"],
+              name: "navy enperrials",
+              skills: "mpu qsj res bdx",
             }
           },
-          background: 'linear-gradient(to top right, #e694fc, #c133e9, #6ed617)',
-        },
-        {
-          image: "https://imgur.com/vqpNnLT.jpg",
-          name: "Kensa .52 Gal",
-          weapon: getItem("main", 52),
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/v1jqwBn.png",
+          weapon: "Custom Jet Squelcher",
           gear: {
             head: {
-              ...getItem("head", 3014),
-              main: "ssu",
-              skills: ["res", "qsj", "bdx"],
+              name: "Fake contacts",
+              skills: "scu scu scu scu",
             },
             clothes: {
-              ...getItem("clothes", 7009),
-              main: "ssu",
-              skills: ["ssu", "mpu", "mpu"],
+              name: "Octoking HK Jersey",
+              skills: "mpu bpu bpu ss",
             },
             shoes: {
-              ...getItem("shoes", 6016),
-              main: "sj",
-              skills: ["mpu", "mpu", "mpu"],
+              name: "neo octoling boots",
+              skills: "os qsj res bdx",
             }
           },
-          background: 'linear-gradient(to top right, #7a183c, #5da3b1)',
-        },
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/NlhAFW7.png",
+          weapon: "Kensa Rapid Blaster",
+          gear: {
+            head: {
+              name: "Fierce Fishskull",
+              skills: "mpu mpu res iru",
+            },
+            clothes: {
+              name: "half-sleeve sweater",
+              skills: "iss iss bdx res",
+            },
+            shoes: {
+              name: "pearlescent squidkid IV",
+              skills: "ssu ssu ssu ssu",
+            }
+          },
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/EuLOfGz.png",
+          weapon: "Grim Range Blaster",
+          gear: {
+            head: {
+              name: "Designer Headphones",
+              skills: "iss ism bpu bpu",
+            },
+            clothes: {
+              name: "takoroka windcrusher",
+              skills: "mpu qsj ism res",
+            },
+            shoes: {
+              name: "crazy arrows",
+              skills: "sj bpu ss ism",
+            }
+          },
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/fsVTBck.png",
+          weapon: "Carbon Roller Deco",
+          gear: {
+            head: {
+              name: "SV925 Circle Shades",
+              skills: "ssu res qsj bdx",
+            },
+            clothes: {
+              name: "FA-01 Jacket",
+              skills: "ns ssu ssu res",
+            },
+            shoes: {
+              name: "sun & shade squidkid IV",
+              skills: "mpu mpu mpu mpu",
+            }
+          },
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/QISqu6j.png",
+          weapon: "Hero Charger Replica",
+          gear: {
+            head: {
+              name: "half-rim glasses",
+              skills: "spu spu spu mpu",
+            },
+            clothes: {
+              name: "crimson parashooter",
+              skills: "scu ism ism qsj",
+            },
+            shoes: {
+              name: "moto boots",
+              skills: "os mpu mpu qsj",
+            }
+          },
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/0ENrIps.png",
+          weapon: "Hero Charger Replica",
+          gear: {
+            head: {
+              name: "Octoglasses",
+              skills: "lde qsj res bdx",
+            },
+            clothes: {
+              name: "baseball jersey",
+              skills: "scu scu scu scu",
+            },
+            shoes: {
+              name: "red slip-ons",
+              skills: "os ssu ssu ss",
+            }
+          },
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/nAECbZ0.png",
+          weapon: "Firefin Splat Charger",
+          gear: {
+            head: {
+              name: "Golden Toothpick",
+              skills: "scu scu scu ss",
+            },
+            clothes: {
+              name: "white sailor suit",
+              skills: "ism ssu qsj ism",
+            },
+            shoes: {
+              name: "friendship bracelet",
+              skills: "ssu qsj res bdx",
+            }
+          },
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/qbc3JHH.png",
+          weapon: "E-Liter 4k",
+          gear: {
+            head: {
+              name: "Annaki Beret & Glasses",
+              skills: "ism ism mpu mpu",
+            },
+            clothes: {
+              name: "blue sailor suit",
+              skills: "rp mpu scu scu",
+            },
+            shoes: {
+              name: "friendship bracelet",
+              skills: "ssu qsj res bdx",
+            }
+          },
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/rEmQObg.png",
+          weapon: "Soda Slosher",
+          gear: {
+            head: {
+              name: "Skate Helmet",
+              skills: "lde qr qr qr",
+            },
+            clothes: {
+              name: "baby-jelly shirt",
+              skills: "qr res qsj bdx",
+            },
+            shoes: {
+              name: "blue slip-ons",
+              skills: "sj ssu ssu ssu",
+            }
+          },
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/EbN3whE.png",
+          weapon: "Tri-Slosher",
+          gear: {
+            head: {
+              name: "backwards cap",
+              skills: "cb qsj ss bdx",
+            },
+            clothes: {
+              name: "green zip hoodie",
+              skills: "qr qr qr qr",
+            },
+            shoes: {
+              name: "green laceups",
+              skills: "sj ssu ssu res",
+            }
+          },
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/1JuTW7O.png",
+          weapon: "Kensa Sloshing Machine",
+          gear: {
+            head: {
+              name: "Octoglasses",
+              skills: "lde qsj res bdx",
+            },
+            clothes: {
+              name: "vintage check shirt",
+              skills: "ssu ism ism res",
+            },
+            shoes: {
+              name: "cherry kicks",
+              skills: "sj rsu rsu rsu",
+            }
+          },
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/a3e7Ruu.png",
+          weapon: "Custom Explosher",
+          gear: {
+            head: {
+              name: "Snorkel Mask",
+              skills: "ssu ism ism iru",
+            },
+            clothes: {
+              name: "anchor life vest",
+              skills: "ssu qr ism ism",
+            },
+            shoes: {
+              name: "Flipper Floppers",
+              skills: "ism bdx ism iru",
+            }
+          },
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/Mlae24r.png",
+          weapon: "Ballpoint Splatling Nouveau",
+          gear: {
+            head: {
+              name: "king flip mesh",
+              skills: "rsu rsu rsu rsu",
+            },
+            clothes: {
+              name: "front zip vest",
+              skills: "res qsj bdx ism",
+            },
+            shoes: {
+              name: "N-Pacer Cao",
+              skills: "os rsu rsu rsu",
+            }
+          },
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/DPkexLx.png",
+          weapon: "Kensa Glooga Dualies",
+          gear: {
+            head: {
+              name: "Octoling Shades",
+              skills: "lde iru qsj ss",
+            },
+            clothes: {
+              name: "half-sleeve sweater",
+              skills: "iss iss bdx res",
+            },
+            shoes: {
+              name: "Punk whites",
+              skills: "scu scu scu scu",
+            }
+          },
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/rB95weA.png",
+          weapon: "Dark Tetra Dualies",
+          gear: {
+            head: {
+              name: "Special Forces Beret",
+              skills: "mpu mpu bdx res",
+            },
+            clothes: {
+              name: "white inky rider",
+              skills: "qr qr qr qsj",
+            },
+            shoes: {
+              name: "white kicks",
+              skills: "sj qr qr qr",
+            }
+          },
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/WU7Azxx.png",
+          weapon: "Tenta Brella",
+          gear: {
+            head: {
+              name: "Enchanted hat",
+              skills: "ism ism ism spu",
+            },
+            clothes: {
+              name: "dark bomber jacket",
+              skills: "spu spu spu spu",
+            },
+            shoes: {
+              name: "neo octoling boots",
+              skills: "os qsj res bdx",
+            }
+          },
+          background: generateBg(),
+        }),
+        createLoadout({
+          image: "https://imgur.com/JHH7RHY.png",
+          weapon: "Kensa Undercover Brella",
+          gear: {
+            head: {
+              name: "Pilot Goggles",
+              skills: "mpu mpu mpu ssu",
+            },
+            clothes: {
+              name: "half-sleeve sweater",
+              skills: "iss iss bdx res",
+            },
+            shoes: {
+              name: "white norimaki 750s",
+              skills: "ssu ssu ssu qsj",
+            }
+          },
+          background: generateBg(),
+        }),
       ],
     }
   }
@@ -463,7 +702,7 @@ export default {
   .home {
     display: flex;
     flex-flow: row wrap;
-    font-size: 12px;
+    font-size: 9.5px;
   }
   @media print {
     .home {

@@ -26,7 +26,7 @@ export default {
 </script>
 <style lang="scss">
 :root {
-  --card-size: 2in;
+  --card-size: 46mm;
   --border-radius: .5rem;
   --card-padding: calc(var(--card-size) / 16);
   --label-padding: calc(var(--card-size) / 40);
@@ -49,11 +49,13 @@ export default {
   display: flex;
   flex-direction: row;
   font-family: "Splatoon2", arial;
-  margin-bottom: .2in;
-  margin-right: .2in;
+  // margin-bottom: calc(var(--card-size) * .1);
+  // margin-right: calc(var(--card-size) * .1);
+  margin-bottom: 1px;
+  margin-right: 1px;
   break-inside: avoid;
   .weapon-name, .weapon-label {
-    line-height: 1rem;
+    line-height: 12px;
   }
 }
 

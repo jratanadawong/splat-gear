@@ -23,7 +23,7 @@ export default {
     background-color: black;
     height: calc(var(--gear-image-size) * .8);
     width: calc(var(--gear-image-size) * .8);
-    box-shadow: inset 2px 2px 10px -2px white;
+    // box-shadow: inset 2px 2px 10px -4px white;
     img {
       height: calc(var(--gear-image-size) * .65);
       z-index: 2;

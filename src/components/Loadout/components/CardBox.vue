@@ -1,5 +1,5 @@
 <template>
-  <div class="card-box" :style="{ background: background }">
+  <div class="card-box" :style="{ background: background, backgroundSize: 'cover' }">
     <slot />
   </div>
 </template>
@@ -22,6 +22,7 @@ export default {
     width: var(--card-size);
     border-radius: var(--border-radius);
     -webkit-print-color-adjust: exact;
+    background-size: cover;
 
   }
 </style>

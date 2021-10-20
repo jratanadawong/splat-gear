@@ -41,6 +41,7 @@ export default {
       justify-content: center;
       width: 100%;
       margin: 0 10px;
+      z-index: 3;
     }
     .gear {
       z-index: 2;

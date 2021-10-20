@@ -31,6 +31,7 @@ export default {
 </script>
 <style lang="scss">
   .card-front {
+    // margin-right: 1px;
     .card-content {
       width: var(--card-content-size);
       height: var(--card-content-size);

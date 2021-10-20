@@ -29,10 +29,16 @@ export const ASSET_PREFIX = {
   clothes: "Clt_",
 };
 
+export const TYPE_DICT = {
+  Clt: "clothes",
+  Hed: "head",
+  Shs: "shoes",
+};
+
 export const SKILL_DICT = {
   bdx: "BombDamage_Reduction",
   bpu: "BombDistance_Up",
-  comeback: "ComeBack",
+  cb: "ComeBack",
   haunt: "DeathMarking",
   lde: "EndAllUp",
   rsu: "HumanMove_Up",
